@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Feedback</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #e6e6fa;
+            text-align: center;
+            padding: 50px;
+        }
+        .box {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            width: 300px;
+            margin: auto;
+            box-shadow: 0 0 10px #aaa;
+        }
+        input, textarea, button {
+            width: 90%;
+            padding: 10px;
+            margin: 8px;
+        }
+        button {
+            background: #6c63ff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Student Feedback</h2>
+    <form id="form">
+        <input type="text" id="name" placeholder="Enter your name" required>
+        <textarea id="feedback" placeholder="Enter feedback" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    <p id="result"></p>
+</div>
+
+<script>
+    document.getElementById("form").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        let name = document.getElementById("name").value;
+        let feedback = document.getElementById("feedback").value;
+
+        let message = `Thank you, ${name}! Your feedback: ${feedback}`;
+        document.getElementById("result").textContent = message;
+    });
+</script>
+
+</body>
+</html>
